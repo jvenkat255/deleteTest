@@ -12,6 +12,14 @@ pipeline {
         cleanWs()
       }
     }  
+    stage('GitVersion ') {
+      steps {
+        script {
+          def datas = readYaml file: 'gitversion.yml'
+         
+        }
+      }
+    }
     stage('Source Checkout') {
       steps {
         checkout scm
